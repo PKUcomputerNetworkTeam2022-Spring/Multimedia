@@ -37,6 +37,10 @@ Thumbs.db
 *[ _]fake.*
 fake[ _]*.*
 
+# Log and output #
+*.log
+*output*
+
 # IDE configs #
 .vscode/
 .idea/
