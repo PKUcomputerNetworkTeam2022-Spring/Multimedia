@@ -4,7 +4,7 @@
 import requests
 import json
 from datetime import time
-from secret import get_token
+from .secret import get_token
 
 # 查询音频任务转写结果请求地址
 API_URL = 'https://aip.baidubce.com/rpc/2.0/aasr/v1/query'
@@ -47,7 +47,7 @@ def query_task(*tasks, path='output/output.txt'):
 
 
 def format_time(ms):
-    s, ms = divmod(ms * 100, 1000000)
+    s, ms = divmod(ms * 1000, 1000000)
     m, s = divmod(s, 60)
     h, m = divmod(m, 60)
     return str(time(h, m, s, ms))

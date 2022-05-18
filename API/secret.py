@@ -16,12 +16,12 @@ SCOPE = 'brain_asr_async'  # 有此scope表示有asr能力，没有请在网页�
 _token = None
 
 
-def set_debug(debug):
+def set_debug(debug: bool):
     global debug_print
     if debug:
         debug_print = print
     else:
-        debug_print = lambda *args: None
+        debug_print = lambda *args, **kwargs: None
 
 
 def get_token(refresh=True):
