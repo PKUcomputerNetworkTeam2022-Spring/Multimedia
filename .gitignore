@@ -32,7 +32,6 @@ Thumbs.db
 
 # PROJECT SPECIFIC #
 # Local test #
-*test*.*
 *[ _]old.*
 *[ _]fake.*
 fake[ _]*.*
@@ -70,3 +69,6 @@ __pycache__/
 *.njsproj
 *.sln
 *.sw?
+
+# Testing file.
+*.txt
