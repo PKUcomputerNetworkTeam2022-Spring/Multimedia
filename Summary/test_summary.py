@@ -1,9 +1,10 @@
 import unittest
 from .textRank import get_topk_sentence
+from .bart_summary import generate_title
 
 
 class TestSummary(unittest.TestCase):
-    def test_text_rank(self):
+    def __init__(self):
         s1 = "晚了，前几任县长把鹅城的税收到90年以后了，也就是他妈的犀利，2010年了，咱们来错地方，我倒是觉得这个地方不错，百姓成穷鬼了，" \
              "没油水可榨了，老子从来就没想刮穷鬼的钱不刮穷鬼的钱，你收谁的呀？谁有钱挣谁的？当过现场吗？没有我告诉告诉你，县长上任，得巧立名目，" \
              "拉拢豪绅交税捐款他们交了，才能让百姓跟着交钱得钱之后毫升的钱如数奉还，百姓的钱三七分成怎么才七成七成是人家的？" \
@@ -38,12 +39,27 @@ class TestSummary(unittest.TestCase):
              "不是吧不错啊！今年的过这些招了，长进很大，女皇姐姐，是不是我的长津大学呀？还是锦瑞的展劲大，谢谢群主夸奖他叫我天泉剑宗教导嘛，" \
              "我只有夏冬姐姐教我，他当然比我强些了嗯嗯，好长进都很大。姐姐，下次别见到我们就是我们伸手这么多人看着打不过你，很丢人的。" \
              "好。下次单独是你。嗯。哎们两个去哪逍遥去了？去接了一位朋友，他平日里身体不好，我请她来京城休养。嗯。我操。叫嗯。 "
+        self.texts = [s1, s2, s3, s4]
 
-        texts = [s1, s2, s3, s4]
-        for text in texts:
+    def test_text_rank(self):
+        for text in self.texts:
             indexes, setences = get_topk_sentence(text, 7)
             print("摘要：")
             for idx, sentence in zip(indexes, setences):
                 print(f"Sent Idx: {idx}")
                 print(sentence)
             print()
+
+    def test_generate_tile(self):
+        for text in self.texts:
+            candidate_titles = generate_title(text)
+            print("标题：")
+            for title in candidate_titles:
+                print(title)
+            print()
+
+        # 生成的结果不是很尽如人意：
+        # s1: ['白 岩 松 谈 县 长', '白 岩 松 谈 县 长 谈 县 情']
+        # s2: ['# 早 报 每 日 书 单 # 139', '139 期 · 每 日 书 单', '每 日 书 单 · 每 日 一 元', '一 元 钱 书 单 走 红 网 络']
+        # s3: ['双 刹 帮 内 斗 记']
+        # s4: ['新 词 · 封 面']
