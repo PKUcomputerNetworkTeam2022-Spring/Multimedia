@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # wandb env variables
-export WANDB_ENTITY=echoshao
+export WANDB_ENTITY=${WNADB_ENTITY}
 
 DATE=`date +%Y%m%d`
 
@@ -11,8 +11,8 @@ export WANDB_RUN_NOTES="Training Chinese BART summary model."
 python -m torch.distributed.launch --nproc_per_node=4 \
 train_bart.py \
   --model_name_or_path "fnlp/bart-base-chinese" \
-  --data_root "/data/v-yijiashao/Multimedia/data" \
-  --output_dir "/data/v-yijiashao/Multimedia/summary_model" \
+  --data_root ${DATA_DIR} \
+  --output_dir ${OUTPUT_DIR} \
   --max_source_length 512 \
   --max_target_length 64 \
   --num_beams 5 \
