@@ -43,9 +43,9 @@ class TestSummary(unittest.TestCase):
 
     def test_text_rank(self):
         for text in self.texts:
-            indexes, setences = get_topk_sentence(text, 7)
+            indexes, sentences = get_topk_sentence(text, 7)
             print("摘要：")
-            for idx, sentence in zip(indexes, setences):
+            for idx, sentence in zip(indexes, sentences):
                 print(f"Sent Idx: {idx}")
                 print(sentence)
             print()
