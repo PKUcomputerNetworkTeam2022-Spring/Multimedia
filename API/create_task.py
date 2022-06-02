@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import requests
 import json
-from .secret import get_token
+from API.secret import get_token
 
 API_URL = 'https://aip.baidubce.com/rpc/2.0/aasr/v1/create'
 

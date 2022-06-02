@@ -4,7 +4,7 @@
 import requests
 import json
 from datetime import time
-from .secret import get_token
+from API.secret import get_token
 
 # 查询音频任务转写结果请求地址
 API_URL = 'https://aip.baidubce.com/rpc/2.0/aasr/v1/query'
