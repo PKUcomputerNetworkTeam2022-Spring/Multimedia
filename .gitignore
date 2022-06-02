@@ -71,4 +71,6 @@ __pycache__/
 *.sw?
 
 # Testing file.
+*test*
+!*test*.py
 *.txt
