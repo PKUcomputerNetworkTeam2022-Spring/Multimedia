@@ -22,6 +22,7 @@
 文本摘要和评分
 
 - bart等文件 (训练：train_bart.py, 推断: bart_summary.py)
+   
    基于BART预训练的内容摘要
    
 - textRank.py
