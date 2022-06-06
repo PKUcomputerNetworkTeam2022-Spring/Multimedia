@@ -1,5 +1,9 @@
 # 多媒体内容生成与传播
 
+本项目针对“剧情类”视频实现长视频转短视频的自动剪辑功能，我们的核心技术路线如图所示：
+
+![roadmap](C:\project\network_lab\Multimedia\README.assets\roadmap.png)
+
 ### 目录结构
 
 #### API
@@ -17,12 +21,18 @@
 
 文本摘要和评分
 
-- bart等文件
+- bart等文件 (训练：train_bart.py, 推断: bart_summary.py)
    基于BART预训练的内容摘要
-- textRank
+   
+- textRank.py
+
    关键句提取
 
-#### edit
+- test_summary.py
+
+   提供调用textRank和bart的示例
+
+#### Edit
 
 快捷编辑音视频文件
 
