@@ -2,7 +2,7 @@
 
 本项目针对“剧情类”视频实现长视频转短视频的自动剪辑功能，我们的核心技术路线如图所示：
 
-![roadmap](C:\project\network_lab\Multimedia\README.assets\roadmap.png)
+<img src="img/roadmap.png" alt="roadmap" width="800" />
 
 ### 目录结构
 
